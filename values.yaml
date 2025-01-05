@@ -1,0 +1,19 @@
+replicaCount: 3
+
+image:
+  repository: christianbalderrama/blue-app
+  pullPolicy: IfNotPresent
+  tag: "latest"
+
+service:
+  type: ClusterIP
+  port: 80
+
+resources: {}
+# We can specify resource limits and requests here.
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
