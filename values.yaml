@@ -8,6 +8,7 @@ image:
 service:
   type: NodePort
   port: 80
+  targetPort: 3000
 deployment:
   containerPort: 3000
   env:
