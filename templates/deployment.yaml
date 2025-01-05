@@ -20,9 +20,10 @@ spec:
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         ports:
-        - containerPort: 80
-        resources:
-          # {{- toYaml .Values.resources | nindent 12 }}
+        - containerPort: {{ .Values.deployment.containerPort }}
+        env:
+          - name: PORT
+            value: "3000"
       nodeSelector:
         # {{- toYaml .Values.nodeSelector | nindent 8 }}
       affinity:
